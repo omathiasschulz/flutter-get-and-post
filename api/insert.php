@@ -28,6 +28,10 @@
             'userEmail' => $request['userEmail'],
         ];
 
+        // adiciona o noticia no data
+        $data[] = $novaNoticia;
+        file_put_contents('data/data.json', json_encode($data));
+
         // TODO - salvar a notícia
         echo json_encode($novaNoticia);
     } catch (Exception $e) {
