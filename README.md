@@ -2,9 +2,14 @@
 
 Uma simples aplicação flutter utilizando chamadas GET e POST
 
+## Flutter
+
 Uma aplicação flutter que realiza a consulta na API
 
+## API PHP
+
 Uma API PHP desenvolvida exclusivamente para esse projeto
+Armazenamento de notícias que foram verificadas como verdadeiras/falsas
 
 ## XAMPP
 
@@ -36,9 +41,13 @@ Com essa alteração as duas rotas podem ser acessadas da seguinte maneira
 
 `http://localhost`
 
-### Listar (GET):
+### Listar - All (GET):
 
 `http://localhost/list`
+
+### Listar - One (GET):
+
+`http://localhost/list?id=ID_REGISTRO`
 
 ### Cadastrar (POST)
 

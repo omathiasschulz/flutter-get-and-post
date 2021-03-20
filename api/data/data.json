@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Título de exemplo",
+        "text": "Texto de exemplo",
+        "userEmail": "mathias@schulz.gg"
+    },
+    {
+        "id": 2,
+        "title": "Título de exemplo 2",
+        "text": "Texto de exemplo 2",
+        "userEmail": "mathias2@schulz.gg"
+    },
+    {
+        "id": 3,
+        "title": "Título de exemplo 3",
+        "text": "Texto de exemplo 3",
+        "userEmail": "mathias3@schulz.gg"
+    }
+]
