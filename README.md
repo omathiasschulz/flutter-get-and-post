@@ -32,6 +32,10 @@ Foi alterado o diretório da API no conf file para:
 
 Com essa alteração as duas rotas podem ser acessadas da seguinte maneira
 
+### Home
+
+`http://localhost`
+
 ### Listar (GET):
 
 `http://localhost/list`
