@@ -1,0 +1,11 @@
+# Omite o .php para realizar a requisição
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Set the headers for the restful api
+Header always set Access-Control-Allow-Origin http://localhost:4200
+# Header always set Access-Control-Allow-Origin 10.0.2.16
+Header always set Access-Control-Max-Age "1000"
+Header always set Access-Control-Allow-Headers "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+Header always set Access-Control-Allow-Methods "POST, GET, DELETE, PUT"
