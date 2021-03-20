@@ -2,7 +2,10 @@
     // Get the posted data.
     $postdata = file_get_contents("php://input");
 
-    if(isset($postdata) && !empty($postdata)) {
+    try {
+        if(!isset($postdata) || empty($postdata)) {
+            throw new Exception('Nenhuma informação encontrada! ');
+        }
         // Pegas as informações do post
         $request = json_decode($postdata);
 
@@ -12,24 +15,23 @@
             || trim($request['text']) === ''
             || trim($request['userEmail']) === ''
             ) {
-            return http_response_code(400);
+            throw new Exception('É necessário preencher todos os campos! ');
         }
 
-        try {
-            $data = getData();
-            $nextId = getNextID($data);
+        $data = getData();
+        $nextId = getNextID($data);
 
-            $novaNoticia = [
-                'id' => $nextId,
-                'title' => $request['title'],
-                'text' => $request['text'],
-                'userEmail' => $request['userEmail'],
-            ];
+        $novaNoticia = [
+            'id' => $nextId,
+            'title' => $request['title'],
+            'text' => $request['text'],
+            'userEmail' => $request['userEmail'],
+        ];
 
-            echo json_encode($novaNoticia);
-        } catch (Exception $e) {
-            http_response_code(422);
-        }
+        // TODO - salvar a notícia
+        echo json_encode($novaNoticia);
+    } catch (Exception $e) {
+        echo '{"status": false, "message": "' . $e->getMessage() . '"}';
     }
 
     function getData()
