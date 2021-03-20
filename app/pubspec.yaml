@@ -24,6 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   splashscreen: ^1.2.0
+  # utilizado para realizar as requisições
+  http: ^0.12.0+2
+  # verifica o estado das conexões com o servidor
+  connectivity: ^0.4.3+2
 
 
   # The following adds the Cupertino Icons font to your application.

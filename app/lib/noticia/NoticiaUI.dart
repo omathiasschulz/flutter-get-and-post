@@ -1,0 +1,1 @@
+// busca todas as notícias

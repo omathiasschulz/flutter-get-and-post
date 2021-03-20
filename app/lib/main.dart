@@ -277,6 +277,23 @@ class PageInformacoes extends StatelessWidget {
                   ]),
                 ),
               ),
+              // adiciona os cards
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.only(
+                    left: 50.0,
+                    right: 50.0,
+                    top: 40,
+                    bottom: 20,
+                  ),
+                  child: new Column(
+                    children: <Widget>[
+                      new Text('Hello World'),
+                      new Text('How are you?')
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

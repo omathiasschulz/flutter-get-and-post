@@ -3,18 +3,21 @@
         "id": 1,
         "title": "Título de exemplo",
         "text": "Texto de exemplo",
-        "userEmail": "mathias@schulz.gg"
+        "userEmail": "mathias@schulz.gg",
+        "fakeNews": true
     },
     {
         "id": 2,
         "title": "Título de exemplo 2",
         "text": "Texto de exemplo 2",
-        "userEmail": "mathias2@schulz.gg"
+        "userEmail": "mathias2@schulz.gg",
+        "fakeNews": false
     },
     {
         "id": 3,
         "title": "Título de exemplo 3",
         "text": "Texto de exemplo 3",
-        "userEmail": "mathias3@schulz.gg"
+        "userEmail": "mathias3@schulz.gg",
+        "fakeNews": false
     }
 ]

@@ -1,0 +1,1 @@
+// busca uma notícia específica
