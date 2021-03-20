@@ -51,4 +51,4 @@ Com essa alteração as duas rotas podem ser acessadas da seguinte maneira
 
 ### Cadastrar (POST)
 
-`http://localhost/store`
+`http://localhost/insert`
