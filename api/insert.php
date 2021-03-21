@@ -7,13 +7,14 @@
             throw new Exception('Nenhuma informação encontrada! ');
         }
         // Pegas as informações do post
-        $request = json_decode($postdata);
+        $request = json_decode($postdata, true);
 
         // Valida se as informações foram preenchidas corretamente
         if (
             trim($request['title']) === ''
             || trim($request['text']) === ''
             || trim($request['userEmail']) === ''
+            || $request['fakeNews'] === ''
             ) {
             throw new Exception('É necessário preencher todos os campos! ');
         }
@@ -26,6 +27,7 @@
             'title' => $request['title'],
             'text' => $request['text'],
             'userEmail' => $request['userEmail'],
+            'fakeNews' => $request['fakeNews'],
         ];
 
         // adiciona o noticia no data
@@ -33,7 +35,7 @@
         file_put_contents('data/data.json', json_encode($data));
 
         // TODO - salvar a notícia
-        echo json_encode($novaNoticia);
+        echo '{"status": false, "message": "Sucesso ao inserir notícia! "}';
     } catch (Exception $e) {
         echo '{"status": false, "message": "' . $e->getMessage() . '"}';
     }
