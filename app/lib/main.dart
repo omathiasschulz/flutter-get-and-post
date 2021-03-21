@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
           scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
           controller: _controller,
-          children: [NoticiaUI(), NoticiaPost()],
+          children: [NoticiaUI()],
+          // children: [NoticiaUI(), NoticiaPost()],
         ));
   }
 }

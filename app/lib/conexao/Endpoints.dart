@@ -11,8 +11,8 @@ import 'package:connectivity/connectivity.dart';
 const String _noValueGiven = "";
 
 // API url
-String noticiaGet = 'http://localhost/list';
-String noticiaPost = 'http://localhost/insert';
+String noticiaGet  = 'http://10.0.2.2/list';
+String noticiaPost = 'http://10.0.2.2/insert';
 
 // Utilização do package http para carregar os dados da API
 Future<NoticiaListModel> getNoticiaListData([String id = _noValueGiven]) async {
