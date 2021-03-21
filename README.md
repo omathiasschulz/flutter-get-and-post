@@ -39,16 +39,16 @@ Com essa alteração as duas rotas podem ser acessadas da seguinte maneira
 
 ### Home
 
-`http://localhost`
+`http://10.0.2.2`
 
 ### Listar - All (GET):
 
-`http://localhost/list`
+`http://10.0.2.2/list`
 
 ### Listar - One (GET):
 
-`http://localhost/list?id=ID_REGISTRO`
+`http://10.0.2.2/list?id=ID_REGISTRO`
 
 ### Cadastrar (POST)
 
-`http://localhost/insert`
+`http://10.0.2.2/insert`

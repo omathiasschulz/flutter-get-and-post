@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "title": "Título de exemplo",
-        "text": "Texto de exemplo",
+        "title": "Cientistas encontram provas irrefutáveis de que a terra é plana",
+        "text": "Os terraplanistas tinham razão. A Nasa divulgou hoje o verdadeiro vídeo que prova que a terra é plana. O material vinha sendo escondido de todos mas a trama foi desmascarada por um grupo de terraplanistas americano.",
         "userEmail": "mathias@schulz.gg",
         "fakeNews": true
     },
     {
         "id": 2,
-        "title": "Título de exemplo 2",
-        "text": "Texto de exemplo 2",
-        "userEmail": "mathias2@schulz.gg",
+        "title": "Sucessora da VW Kombi recebe versão esportiva com visual de Golf GTI e suspensão rebaixada",
+        "text": "A Transporter T6.1 possui um motor 2.0 de 204 cv e faz de 0 a 100 km/h em 8,9 segundos, atingindo a velocidade máxima de 202 km/h. É somente um pouco mais lenta que o Renault Sandero RS, uma vez que o hatch fez o mesmo em 8,7 s. A expectativa é que a Transporter T6.1 comece a ser comercializada ao final do mês de março no continente europeu, e apareça nas ruas a partir de julho.",
+        "userEmail": "artur@schulz.gg",
         "fakeNews": false
     },
     {
         "id": 3,
-        "title": "Título de exemplo 3",
-        "text": "Texto de exemplo 3",
-        "userEmail": "mathias3@schulz.gg",
-        "fakeNews": false
+        "title": "ONG luta pela inclusão social de Emojis pouco usados",
+        "text": "Emojicare, uma ONG que se dedica a estimular o uso dos Emojis esquecidos. Todo mundo sempre manda os mesmos Emojis, a carinha sorrindo, o coração. As pessoas precisam descobrir o valor do sushi aberto e da bandeirinha de golfe, diz ele.",
+        "userEmail": "fulano@schulz.gg",
+        "fakeNews": true
     }
 ]
