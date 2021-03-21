@@ -1,15 +1,15 @@
 import 'NoticiaModel.dart';
 
 class NoticiaListModel {
-  List<NoticiaModel> lista;
+  List<NoticiaModel> listaNoticias;
 
-  NoticiaListModel({this.lista});
+  NoticiaListModel({this.listaNoticias});
 
   NoticiaListModel.fromJson(List<dynamic> parsedJson) {
     // ignore: deprecated_member_use
-    lista = new List<NoticiaModel>();
+    listaNoticias = new List<NoticiaModel>();
     parsedJson.forEach((v) {
-      lista.add(NoticiaModel.fromJson(v));
+      listaNoticias.add(NoticiaModel.fromJson(v));
     });
   }
 }
