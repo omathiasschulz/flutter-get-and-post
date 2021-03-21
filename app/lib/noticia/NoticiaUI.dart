@@ -92,6 +92,14 @@ class _NoticiaUI extends State {
     return Colors.green;
   }
 
+  // retorna uma string do tipo de noticia
+  String news(fakeNews) {
+    if (fakeNews == true) {
+      return 'FAKE\nNEWS';
+    }
+    return 'TRUE\nNEWS';
+  }
+
   Widget generateColum(NoticiaModel item) => Card(
     child: Container(
       // decoration: BoxDecoration(color: setBackgroundColor(item.fakeNews)),
@@ -103,13 +111,16 @@ class _NoticiaUI extends State {
         ],
       ),
       child: ListTile(
+        leading: Text(
+          news(item.fakeNews),
+          style: TextStyle(fontSize: 13)
+        ),
         title: Text(
-          item.title,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
+          item.id.toString() + ' - ' + item.title,
+          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
         subtitle: Text(
-          item.id.toString(),
-          style: TextStyle(fontWeight: FontWeight.w600)
+          item.text + '\n\nEnviado por: ' + item.userEmail
         ),
       ),
     ),
