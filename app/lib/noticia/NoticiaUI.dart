@@ -3,7 +3,8 @@ import 'package:app/conexao/Endpoints.dart';
 import 'package:app/noticia/NoticiaModel.dart';
 import 'package:app/noticia/NoticiaListModel.dart';
 
-// noticia user interface
+/// Notícia user interface
+/// Lista as informações das notícias
 class NoticiaUI extends StatefulWidget {
   _NoticiaUI createState() => _NoticiaUI();
 }

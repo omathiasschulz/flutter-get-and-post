@@ -7,7 +7,7 @@ import 'package:app/noticia/NoticiaListModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:connectivity/connectivity.dart';
 
-// Apenas para verificar se foi passado parametro ou não para a função
+// variavel utilizada como auxilio se será buscado todas as notícias ou apenas uma
 const String _noValueGiven = "";
 
 // API url
@@ -16,7 +16,9 @@ String noticiaPost = 'http://localhost/insert';
 
 // Utilização do package http para carregar os dados da API
 Future<NoticiaListModel> getNoticiaListData([String id = _noValueGiven]) async {
+  // delay de 2 segundos para simular o peso da aplicação ao buscar as notícias
   await Future.delayed(const Duration(seconds: 2), () {});
+
   var response;
   if (identical(id, _noValueGiven)) {
     response = await http.get(
