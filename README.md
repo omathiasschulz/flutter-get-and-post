@@ -52,3 +52,11 @@ Com essa alteração as duas rotas podem ser acessadas da seguinte maneira
 ### Cadastrar (POST)
 
 `http://10.0.2.2/insert`
+
+## Observação
+
+Definir permissões para salvar novas notícias no `data.json`, caso necessário
+
+Na pasta do projeto digite:
+
+`chmod 777 -R api/data/`
