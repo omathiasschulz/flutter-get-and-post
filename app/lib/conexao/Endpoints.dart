@@ -51,6 +51,7 @@ NoticiaListModel postFromJson(String str) {
 }
 
 Future<NoticiaListModel> callAPI(NoticiaModel noticia) async {
+  print('Notícia para gravar: ');
   print(noticia.toJson());
 
   createPost(noticia, noticiaPost).then((response) {
