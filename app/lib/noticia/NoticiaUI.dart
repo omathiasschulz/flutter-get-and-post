@@ -84,14 +84,34 @@ class _NoticiaUI extends State {
     super.initState();
   }
 
+  // retorna a cor do Container, que pode ser verde ou vermelho
+  Color setBackgroundColor(fakeNews) {
+    if (fakeNews == true) {
+      return Colors.red;
+    }
+    return Colors.green;
+  }
+
   Widget generateColum(NoticiaModel item) => Card(
-    child: ListTile(
-      title: Text(
-        item.title,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+    child: Container(
+      // decoration: BoxDecoration(color: setBackgroundColor(item.fakeNews)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: setBackgroundColor(item.fakeNews),
+        boxShadow: [
+          BoxShadow(color: Colors.teal, spreadRadius: 1),
+        ],
       ),
-      subtitle: Text(item.id.toString(),
-          style: TextStyle(fontWeight: FontWeight.w600)),
+      child: ListTile(
+        title: Text(
+          item.title,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
+        ),
+        subtitle: Text(
+          item.id.toString(),
+          style: TextStyle(fontWeight: FontWeight.w600)
+        ),
+      ),
     ),
   );
 }
