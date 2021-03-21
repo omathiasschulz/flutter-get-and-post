@@ -3,11 +3,11 @@ import 'package:app/conexao/Endpoints.dart';
 import 'package:app/noticia/NoticiaModel.dart';
 
 /// Post notícia
-class PostNoticia extends StatefulWidget {
-  _PostNoticia createState() => _PostNoticia();
+class NoticiaPost extends StatefulWidget {
+  _NoticiaPost createState() => _NoticiaPost();
 }
 
-class _PostNoticia extends State {
+class _NoticiaPost extends State {
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   NoticiaModel noticia = new NoticiaModel();
 
