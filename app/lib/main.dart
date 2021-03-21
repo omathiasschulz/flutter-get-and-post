@@ -1,48 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 import 'package:app/noticia/NoticiaUI.dart';
 import 'package:app/noticia/NoticiaPost.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
+// widget principal da aplicação
 class MyApp extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  _MyHomePageState createState() => _MyHomePageState();
+// splash screen
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        SplashScreen(
+          seconds: 4,
+          gradientBackground: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Colors.teal[100],
+              Colors.teal[900],
+            ],
+          ),
+          navigateAfterSeconds: Start(),
+          loaderColor: Colors.transparent,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('imagens/logo.png'),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Start extends StatefulWidget {
+  Start({Key key}) : super(key: key);
+  _Start createState() => _Start();
+}
+
+class _Start extends State {
   PageController _controller = PageController(
     initialPage: 0,
   );
-  @override
+
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Detecção de Fake News')),
         body: PageView(
           scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
           controller: _controller,
-          children: [NoticiaUI()],
-          // children: [NoticiaUI(), NoticiaPost()],
-        ));
+          children: [NoticiaUI(), NoticiaPost()],
+        ),
+      ),
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+    );
   }
 }
