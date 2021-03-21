@@ -89,7 +89,23 @@ class _PageVerificacao extends State {
                       _formKey.currentState.save();
                       // reseta o formulário
                       _formKey.currentState.reset();
-                      var mensagem = validaNoticia(_noticia);
+                      var typeNews = validaNoticia(_noticia);
+
+                      // se o número for 1 é uma fake news
+                      // se o número for 0 é uma true news
+                      var mensagem = 'Notícia identificada como uma verdadeira notícia! ';
+                      _noticia.fakeNews = false;
+                      if (typeNews == 1) {
+                        mensagem = 'Notícia identificada como uma falsa notícia! ';
+                        _noticia.fakeNews = true;
+                      }
+
+                      // apresenta as informações da notícia
+                      print('=> Informações da notícia: ');
+                      print('Título: ${_noticia.title}');
+                      print('Texto: ${_noticia.text}');
+                      print('E-mail: ${_noticia.userEmail}');
+                      print('Fake News: ${_noticia.fakeNews}');
 
                       // chama a rotina para salvar a noticia na API
                       callAPI(_noticia);
@@ -125,22 +141,10 @@ class _PageVerificacao extends State {
 
 // método responsável por validar se a notícia é fake ou não
 validaNoticia(NoticiaModel _noticia) {
-  // apresenta as informações da notícia
-  print('=> Informações da notícia: ');
-  print('Título: ${_noticia.title}');
-  print('Texto: ${_noticia.text}');
-  print('E-mail: ${_noticia.userEmail}');
-
   // gera um número randômico que pode ser 0 ou 1
   var rng = new Random();
   var typeNews = rng.nextInt(2);
   print('Tipo da notícia: ' + typeNews.toString());
   print('[1 - Fake news | 0 - True news]');
-
-  // se o número for 1 é uma fake news
-  // se o número for 0 é uma true news
-  if (typeNews == 1) {
-    return 'Notícia identificada como uma falsa notícia! ';
-  }
-  return 'Notícia identificada como uma verdadeira notícia! ';
+  return typeNews;
 }
